@@ -1,6 +1,7 @@
 package com.ggonzales.zoogame
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -69,6 +70,14 @@ class MainActivity : AppCompatActivity() {
                 curView.animalNameTextView.text = curAnimal.name
                 curView.animalDescTextView.text = curAnimal.description
                 curView.animalImageButton.setImageResource(curAnimal.image!!)
+                curView.animalImageButton.setOnClickListener{
+                    //intent takes two parameters: thisActivity, destinationActivity
+                    var intent = Intent(context, ViewAnimal::class.java)
+                    intent.putExtra("name", curAnimal.name)
+                    intent.putExtra("description", curAnimal.description)
+                    intent.putExtra("image", curAnimal.image!!)
+                    context!!.startActivity(intent)
+                }
                 return curView
             }
             else{
@@ -76,6 +85,14 @@ class MainActivity : AppCompatActivity() {
                 curView.animalNameTextView.text = curAnimal.name
                 curView.animalDescTextView.text = curAnimal.description
                 curView.animalImageButton.setImageResource(curAnimal.image!!)
+                curView.animalImageButton.setOnClickListener{
+                    //intent takes two parameters: thisActivity, destinationActivity
+                    var intent = Intent(context, ViewAnimal::class.java)
+                    intent.putExtra("name", curAnimal.name)
+                    intent.putExtra("description", curAnimal.description)
+                    intent.putExtra("image", curAnimal.image!!)
+                    context!!.startActivity(intent)
+                }
                 return curView
             }
         }
