@@ -54,7 +54,17 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    class AnimalsAdapter : BaseAdapter {
+    fun deleteAnimal(pos : Int){
+        listOfAnimals.removeAt(pos)
+        animalsAdapter!!.notifyDataSetChanged()
+    }
+    fun copyAnimal(index :Int, animal : Animal){
+        listOfAnimals.add(index, animal)
+        animalsAdapter!!.notifyDataSetChanged()
+    }
+
+    //for a class to use a func inside the other class, must be ineer
+    inner class AnimalsAdapter : BaseAdapter {
         var listOfAnimals = ArrayList<Animal>()
         var context : Context? = null
         constructor(context : Context, listOfAnimals : ArrayList<Animal>) : super(){
@@ -71,7 +81,7 @@ class MainActivity : AppCompatActivity() {
                 curView.animalDescTextView.text = curAnimal.description
                 curView.animalImageButton.setImageResource(curAnimal.image!!)
                 curView.animalImageButton.setOnClickListener{
-                    //intent takes two parameters: thisActivity, destinationActivity
+//                    intent takes two parameters: thisActivity, destinationActivity
                     var intent = Intent(context, ViewAnimal::class.java)
                     intent.putExtra("name", curAnimal.name)
                     intent.putExtra("description", curAnimal.description)
@@ -92,6 +102,11 @@ class MainActivity : AppCompatActivity() {
                     intent.putExtra("description", curAnimal.description)
                     intent.putExtra("image", curAnimal.image!!)
                     context!!.startActivity(intent)
+
+                    //example to add an animal when the image Button is clicked
+//                    copyAnimal(position, curAnimal)
+                    //another example to delete an animal when the image Button is clicked
+//                    deleteAnimal(position)
                 }
                 return curView
             }
