@@ -8,9 +8,9 @@
 
     <ImageButton
         android:id="@+id/animalIButton"
-        android:layout_width="70pt"
-        android:layout_height="70pt"
-        android:layout_marginTop="70dp"
+        android:layout_width="90pt"
+        android:layout_height="90pt"
+        android:layout_marginTop="50dp"
         android:backgroundTint="@color/colorIntermediate"
         android:clickable="false"
         android:cropToPadding="false"

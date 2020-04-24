@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5pt"
             android:text="TextView"
-            android:maxLines="4"
+            android:maxLines="3"
             android:textColor="@color/gray"
             android:textSize="16sp"
             android:textStyle="italic" />
