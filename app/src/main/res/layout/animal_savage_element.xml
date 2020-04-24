@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:padding="5pt"
-    android:background="@drawable/background" >
+    android:background="@drawable/background_savage" >
 
     <ImageButton
         android:id="@+id/animalImageButton"
@@ -27,7 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="TextView"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/colorSavage"
             android:textSize="28sp"
             android:textStyle="bold" />
 
